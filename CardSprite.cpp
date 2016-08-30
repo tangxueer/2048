@@ -23,7 +23,6 @@ bool CardSprite::init() {
 	return true;
 }
 
-
 // 设置数字  
 void CardSprite::setNumber(int num) {
 	number = num;
@@ -96,7 +95,6 @@ int CardSprite::getNumber() {
 	return number;
 }
 
-
 //第1个参数为数字，第2、3个参数为卡片的宽高，第4、5个参数为卡片的位置  
 void CardSprite::enemyInit(int numbers, int width, int height, float CardSpriteX, float CardSpriteY) {
 	// 初始化数字  
@@ -109,7 +107,7 @@ void CardSprite::enemyInit(int numbers, int width, int height, float CardSpriteX
 	// 判断如果不等于0就显示，否则为空  
 	if (number > 0) {
 		// 加入中间字体  
-		labTTFCardNumber = cocos2d::LabelTTF::create(__String::createWithFormat("%i", number)->getCString(), "HirakakuProN-W6", 100);
+		labTTFCardNumber = cocos2d::LabelTTF::create(__String::createWithFormat("%i", number)->getCString(), "HelveticaNeue-Bold", 100);
 		// 显示卡片数字的位置，这里显示在背景的中间  
 		labTTFCardNumber->setPosition(Point(layerColorBG->getContentSize().width / 2, layerColorBG->getContentSize().height / 2));
 		// 添加卡片数字到背景中  
@@ -117,7 +115,7 @@ void CardSprite::enemyInit(int numbers, int width, int height, float CardSpriteX
 	}
 	else {
 		// 加入中间字体  
-		labTTFCardNumber = cocos2d::LabelTTF::create("", "HirakakuProN-w6", 80);
+		labTTFCardNumber = cocos2d::LabelTTF::create("", "HelveticaNeue-Bold", 80);
 		labTTFCardNumber->setPosition(Point(layerColorBG->getContentSize().width / 2, layerColorBG->getContentSize().height / 2));
 		layerColorBG->addChild(labTTFCardNumber);
 	}
